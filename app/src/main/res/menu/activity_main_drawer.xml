@@ -6,19 +6,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_transfer"
-            android:icon="@drawable/ic_menu_transfer"
+            android:icon="@drawable/ic_menu_transfer_white_24dp"
             android:title="@string/transfer" />
         <item
+            android:id="@+id/nav_qr_transfer"
+            android:icon="@drawable/ic_menu_qr_transfer_white_24dp"
+            android:title="@string/qr_transfer" />
+        <item
             android:id="@+id/nav_top_up"
-            android:icon="@drawable/ic_menu_top_up"
+            android:icon="@drawable/ic_menu_top_up_white_24dp"
             android:title="@string/top_up" />
         <item
-            android:id="@+id/nav_withdraw"
-            android:icon="@drawable/ic_menu_withdraw"
-            android:title="@string/withdraw" />
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/ic_menu_payment_white_24dp"
+            android:title="@string/payment" />
         <item
             android:id="@+id/nav_log_out"
-            android:icon="@drawable/ic_menu_log_out"
+            android:icon="@drawable/ic_menu_log_out_white_24dp"
             android:title="@string/log_out" />
     </group>
 

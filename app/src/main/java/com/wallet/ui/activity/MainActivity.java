@@ -1,27 +1,44 @@
 package com.wallet.ui.activity;
 
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.wallet.R;
 
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    @BindView(R.id.transferCardView)
+    CardView transferCardView;
+    @BindView(R.id.qrTransferCardView)
+    CardView qrTransferCardView;
+    @BindView(R.id.topUpCardView)
+    CardView topUpCardView;
+    @BindView(R.id.paymentCardView)
+    CardView paymentCardView;
+    @BindView(R.id.bottomNavigationView)
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -33,6 +50,23 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initViews();
+    }
+
+    private void initViews() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                item -> {
+                    switch (item.getItemId()) {
+                        case R.id.action_home:
+
+                        case R.id.action_favorite:
+
+                        case R.id.action_history:
+
+                    }
+                    return true;
+                });
     }
 
     @Override
@@ -74,9 +108,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_transfer) {
 
+        } else if (id == R.id.nav_qr_transfer) {
+
         } else if (id == R.id.nav_top_up) {
 
-        } else if (id == R.id.nav_withdraw) {
+        } else if (id == R.id.nav_payment) {
 
         } else if (id == R.id.nav_log_out) {
 
@@ -85,5 +121,19 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @OnClick({R.id.transferCardView, R.id.qrTransferCardView, R.id.topUpCardView, R.id.paymentCardView})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.transferCardView:
+                break;
+            case R.id.qrTransferCardView:
+                break;
+            case R.id.topUpCardView:
+                break;
+            case R.id.paymentCardView:
+                break;
+        }
     }
 }

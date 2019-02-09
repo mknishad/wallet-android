@@ -23,7 +23,7 @@
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:contentDescription="@string/nav_header_desc"
-            android:src="@drawable/ic_home_user_photo" />
+            android:src="@drawable/ic_user_photo" />
 
         <LinearLayout
             android:orientation="vertical"
