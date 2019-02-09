@@ -7,14 +7,17 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="transfer">Transfer</string>
+    <string name="_n_transfer">\nTransfer</string>
     <string name="qr_transfer">QR Transfer</string>
+    <string name="_n_qr_transfer">\nQR Transfer</string>
     <string name="top_up">Top Up</string>
+    <string name="_n_top_up">\nTop Up</string>
+    <string name="payment">Payment</string>
+    <string name="_n_payment">\nPayment</string>
     <string name="log_out">Log Out</string>
-    <string name="withdraw">Withdraw</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
     <string name="history">History</string>
-    <string name="payment">Payment</string>
     <string name="balance_bdt">Balance: BDT</string>
-    <string name="_100_0">100.0</string>
+    <string name="_0_00">0.00</string>
 </resources>

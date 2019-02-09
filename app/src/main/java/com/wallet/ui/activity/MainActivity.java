@@ -1,6 +1,7 @@
 package com.wallet.ui.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity
     CardView paymentCardView;
     @BindView(R.id.bottomNavigationView)
     BottomNavigationView bottomNavigationView;
+    @BindView(R.id.swipeRefreshLayout)
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,10 @@ public class MainActivity extends AppCompatActivity
                     }
                     return true;
                 });
+
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            new Handler().postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 2000);
+        });
     }
 
     @Override
