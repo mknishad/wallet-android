@@ -20,4 +20,8 @@
     <string name="history">History</string>
     <string name="balance_bdt">Balance: BDT</string>
     <string name="_0_00">0.00</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
 </resources>
