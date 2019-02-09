@@ -44,9 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.app_name);
     }
 
     @OnClick({R.id.loginButton, R.id.registerTextView})
@@ -55,11 +53,12 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.loginButton:
                 phoneNumber = phoneNumberWrapper.getEditText().getText().toString().trim();
                 password = passwordWrapper.getEditText().getText().toString().trim();
-                Log.d(TAG, "onViewClicked: phoneNumber = " + phoneNumber + " passowrd = " + password);
+                Log.d(TAG, "onViewClicked: phoneNumber = " + phoneNumber + " password = " + password);
                 startActivity(new Intent(this, MainActivity.class));
                 finishAffinity();
                 break;
             case R.id.registerTextView:
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
         }
     }
