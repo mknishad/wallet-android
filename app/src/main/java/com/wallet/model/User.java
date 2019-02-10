@@ -4,8 +4,10 @@ import com.google.gson.annotations.Expose;
 
 import java.io.Serializable;
 
-public class RegisterRequest implements Serializable {
+public class User implements Serializable {
 
+    @Expose
+    private String _id;
     @Expose
     private String mobileNumber;
     @Expose
@@ -15,24 +17,38 @@ public class RegisterRequest implements Serializable {
     @Expose
     private String password;
 
-    public RegisterRequest() {
+    public User() {
     }
 
-    public RegisterRequest(String mobileNumber, String name, String email, String password) {
+    public User(String mobileNumber, String name, String email, String password) {
         this.mobileNumber = mobileNumber;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
+    public User(String mobileNumber, String password) {
+        this.mobileNumber = mobileNumber;
+        this.password = password;
+    }
+
     @Override
     public String toString() {
-        return "RegisterRequest{" +
-                "mobileNumber='" + mobileNumber + '\'' +
+        return "User{" +
+                "_id='" + _id + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getMobileNumber() {
