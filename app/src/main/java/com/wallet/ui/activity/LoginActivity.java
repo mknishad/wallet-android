@@ -122,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                         userLogin = response.body();
                         Log.d(TAG, "onResponse: userLogin = " + userLogin);
                         preferences.putAuthToken(userLogin.getToken());
+                        preferences.putUser(userLogin.getUser());
                         startActivity(new Intent(context, MainActivity.class)
                                 .putExtra(Constant.USER, userLogin.getUser()));
                         finishAffinity();

@@ -1,14 +1,17 @@
 package com.wallet.ui.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.wallet.R;
+import com.wallet.sharedpreference.WalletPreferences;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +27,10 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.balanceTextView)
+    TextView balanceTextView;
     @BindView(R.id.transferCardView)
     CardView transferCardView;
     @BindView(R.id.qrTransferCardView)
@@ -36,28 +43,41 @@ public class MainActivity extends AppCompatActivity
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+
+    private Context context;
+    private WalletPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        init();
+    }
+
+    private void init() {
+        context = MainActivity.this;
+        preferences = new WalletPreferences(context);
+
+        setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        initViews();
-    }
+        View headerView = navigationView.getHeaderView(0);
+        TextView nameTextView = headerView.findViewById(R.id.userNameTextView);
+        TextView phoneTextView = headerView.findViewById(R.id.userPhoneTextView);
 
-    private void initViews() {
+        nameTextView.setText(preferences.getUser().getName());
+        phoneTextView.setText(preferences.getUser().getMobileNumber());
+
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 item -> {
                     switch (item.getItemId()) {
@@ -74,6 +94,8 @@ public class MainActivity extends AppCompatActivity
         swipeRefreshLayout.setOnRefreshListener(() -> {
             new Handler().postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 2000);
         });
+
+
     }
 
     @Override
@@ -127,7 +149,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return false;
     }
 
     @OnClick({R.id.transferCardView, R.id.qrTransferCardView, R.id.topUpCardView, R.id.paymentCardView})
