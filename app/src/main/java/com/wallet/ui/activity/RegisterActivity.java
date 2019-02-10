@@ -62,17 +62,17 @@ public class RegisterActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
 
         context = RegisterActivity.this;
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        user = new User();
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please Wait ...");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
 
         alertDialogBuilder = new AlertDialog.Builder(context)
                 .setMessage("Registration Successful!")
                 .setPositiveButton(android.R.string.ok, (dialog, which) -> finish());
-
-        user = new User();
-
-        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
     }
 
     @OnClick(R.id.registerButton)

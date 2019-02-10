@@ -17,21 +17,6 @@ public class User implements Serializable {
     @Expose
     private String password;
 
-    public User() {
-    }
-
-    public User(String mobileNumber, String name, String email, String password) {
-        this.mobileNumber = mobileNumber;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-
-    public User(String mobileNumber, String password) {
-        this.mobileNumber = mobileNumber;
-        this.password = password;
-    }
-
     @Override
     public String toString() {
         return "User{" +
