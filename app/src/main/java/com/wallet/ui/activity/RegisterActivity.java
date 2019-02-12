@@ -72,7 +72,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         alertDialogBuilder = new AlertDialog.Builder(context)
                 .setMessage("Registration Successful!")
-                .setPositiveButton(android.R.string.ok, (dialog, which) -> finish());
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> finish())
+                .setCancelable(false);
     }
 
     @OnClick(R.id.registerButton)

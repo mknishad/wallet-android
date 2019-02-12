@@ -1,6 +1,7 @@
 package com.wallet.ui.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -156,6 +157,7 @@ public class MainActivity extends AppCompatActivity
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.transferCardView:
+                startActivity(new Intent(context, TransferActivity.class));
                 break;
             case R.id.qrTransferCardView:
                 break;

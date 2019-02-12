@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.TransferActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -54,6 +54,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/amountWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="numberDecimal"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:hint="@string/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordWrapper"
                 app:passwordToggleEnabled="true"
                 android:layout_width="match_parent"
@@ -69,10 +83,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/transferButton"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_button"
-                android:text="@string/login"
+                android:text="@string/transfer"
                 android:textSize="20sp"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
@@ -80,20 +94,6 @@
                 android:textColor="@android:color/white"
                 android:fontFamily="@font/noto_sans_bold"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/registerTextView"
-                android:text="@string/register_here"
-                android:fontFamily="@font/noto_sans_regular"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16sp"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="end"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
