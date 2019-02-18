@@ -37,6 +37,8 @@ public class TransferActivity extends AppCompatActivity {
     private void init() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setTitle(R.string.transfer);
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
     }
 

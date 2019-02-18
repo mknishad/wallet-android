@@ -137,9 +137,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_transfer) {
-
+            startActivity(new Intent(context, TransferActivity.class));
         } else if (id == R.id.nav_qr_transfer) {
-
+            startActivity(new Intent(context, QrTransferActivity.class));
         } else if (id == R.id.nav_top_up) {
 
         } else if (id == R.id.nav_payment) {
@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(context, TransferActivity.class));
                 break;
             case R.id.qrTransferCardView:
+                startActivity(new Intent(context, QrTransferActivity.class));
                 break;
             case R.id.topUpCardView:
                 break;
