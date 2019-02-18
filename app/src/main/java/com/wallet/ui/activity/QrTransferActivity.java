@@ -7,6 +7,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.wallet.R;
 import com.wallet.ui.adapter.FragmentCategoryAdapter;
 import com.wallet.ui.adapter.FragmentHolder;
+import com.wallet.ui.fragment.QrTransferReceiveFragment;
 import com.wallet.ui.fragment.QrTransferSendFragment;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class QrTransferActivity extends AppCompatActivity {
 
         fragmentHolderList = new ArrayList<>();
         fragmentHolderList.add(new FragmentHolder(new QrTransferSendFragment(), getString(R.string.send)));
-        fragmentHolderList.add(new FragmentHolder(new QrTransferSendFragment(), getString(R.string.receive)));
+        fragmentHolderList.add(new FragmentHolder(new QrTransferReceiveFragment(), getString(R.string.receive)));
 
         fragmentCategoryAdapter = new FragmentCategoryAdapter(getSupportFragmentManager(),
                 fragmentHolderList);
