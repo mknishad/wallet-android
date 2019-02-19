@@ -37,10 +37,10 @@
         app:layout_constraintTop_toBottomOf="@id/toolbarLayout">
 
         <LinearLayout
-            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/phoneNumberWrapper"
@@ -48,12 +48,12 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="phone"
-                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_regular"
                     android:hint="@string/phone_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:inputType="phone"
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -62,42 +62,42 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="numberDecimal"
-                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_regular"
                     android:hint="@string/amount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:inputType="numberDecimal"
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordWrapper"
-                app:passwordToggleEnabled="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="textPassword"
-                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_regular"
                     android:hint="@string/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:inputType="textPassword"
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/transferButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_button"
-                android:text="@string/transfer"
-                android:textSize="20sp"
-                android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
-                android:textColor="@android:color/white"
                 android:fontFamily="@font/noto_sans_bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="@string/transfer"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
