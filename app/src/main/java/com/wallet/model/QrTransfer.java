@@ -16,6 +16,8 @@ public class QrTransfer implements Serializable {
     private String message;
     @Expose
     private String qrCode;
+    @Expose
+    private double balance;
 
     @Override
     public String toString() {
@@ -25,6 +27,7 @@ public class QrTransfer implements Serializable {
                 ", pinCode='" + pinCode + '\'' +
                 ", message='" + message + '\'' +
                 ", qrCode='" + qrCode + '\'' +
+                ", balance=" + balance +
                 '}';
     }
 
@@ -66,5 +69,13 @@ public class QrTransfer implements Serializable {
 
     public void setQrCode(String qrCode) {
         this.qrCode = qrCode;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }

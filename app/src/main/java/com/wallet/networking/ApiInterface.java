@@ -26,7 +26,12 @@ public interface ApiInterface {
                             @Body Transfer transfer);
 
     @POST("transfer/users/{userId}/qrCodes")
-    Call<QrTransfer> qrTransfer(@Header("authorization") String authorization,
-                            @Path("userId") String userId,
-                            @Body QrTransfer qrTransfer);
+    Call<QrTransfer> createQr(@Header("authorization") String authorization,
+                              @Path("userId") String userId,
+                              @Body QrTransfer qrTransfer);
+
+    @POST("transfer/users/{userId}/qrCodes/{qrCode}")
+    Call<QrTransfer> redeemQr(@Header("authorization") String authorization,
+                              @Path("userId") String userId,
+                              @Path("qrCode") String qrCode);
 }

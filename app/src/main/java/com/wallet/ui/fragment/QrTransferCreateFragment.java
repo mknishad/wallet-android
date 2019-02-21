@@ -15,17 +15,14 @@ import android.widget.Button;
 import com.google.android.material.textfield.TextInputLayout;
 import com.wallet.R;
 import com.wallet.model.QrTransfer;
-import com.wallet.model.Transfer;
 import com.wallet.model.User;
 import com.wallet.networking.ApiClient;
 import com.wallet.networking.ApiInterface;
 import com.wallet.sharedpreference.WalletPreferences;
 import com.wallet.ui.activity.QrCodeActivity;
-import com.wallet.ui.activity.TransferActivity;
 import com.wallet.util.Constant;
 import com.wallet.util.WalletUtil;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -129,7 +126,7 @@ public class QrTransferCreateFragment extends Fragment {
         qrTransfer.setPinCode(pinCode);
 
         progressDialog.show();
-        Call<QrTransfer> qrTransferCall = apiInterface.qrTransfer(
+        Call<QrTransfer> qrTransferCall = apiInterface.createQr(
                 Constant.BEARER + preferences.getAuthToken(),
                 user.get_id(), qrTransfer);
         qrTransferCall.enqueue(new Callback<QrTransfer>() {
