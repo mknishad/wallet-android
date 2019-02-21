@@ -147,7 +147,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_payment) {
 
         } else if (id == R.id.nav_log_out) {
-
+            preferences.clearData();
+            startActivity(new Intent(this, LoginActivity.class));
+            finishAffinity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

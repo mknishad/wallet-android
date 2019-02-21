@@ -39,4 +39,9 @@ public class WalletPreferences {
         String json = sharedPreferences.getString(Constant.USER, "");
         return gson.fromJson(json, User.class);
     }
+
+    public void clearData() {
+        editor.clear();
+        editor.commit();
+    }
 }
