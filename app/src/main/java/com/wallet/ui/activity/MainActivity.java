@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity
         nameTextView.setText(preferences.getUser().getName());
         phoneTextView.setText(preferences.getUser().getMobileNumber());
 
+        balanceTextView.setText(String.valueOf(preferences.getUser().getBalance()));
+
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 item -> {
                     switch (item.getItemId()) {

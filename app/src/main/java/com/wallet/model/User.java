@@ -9,6 +9,8 @@ public class User implements Serializable {
     @Expose
     private String _id;
     @Expose
+    private double balance;
+    @Expose
     private String mobileNumber;
     @Expose
     private String name;
@@ -21,6 +23,7 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "_id='" + _id + '\'' +
+                ", balance=" + balance +
                 ", mobileNumber='" + mobileNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
@@ -34,6 +37,14 @@ public class User implements Serializable {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public String getMobileNumber() {
