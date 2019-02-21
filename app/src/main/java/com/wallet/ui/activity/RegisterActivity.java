@@ -78,6 +78,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     @OnClick(R.id.registerButton)
     public void onViewClicked() {
+        register();
+    }
+
+    private void register() {
         if (!WalletUtil.hasInternetConnection(context)) {
             WalletUtil.showSnackbar(toolbar, getString(R.string.no_internet_connection));
             Log.e(TAG, "getUserStateFromServer: " + getString(R.string.no_internet_connection));

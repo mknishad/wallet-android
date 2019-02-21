@@ -71,7 +71,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordWrapper"
+                android:id="@+id/pinCodeWrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
@@ -80,8 +80,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans_regular"
-                    android:hint="@string/password"
-                    android:inputType="textPassword"
+                    android:hint="@string/pin_code"
+                    android:inputType="numberPassword"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
