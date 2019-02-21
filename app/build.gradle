@@ -1,6 +1,18 @@
 apply plugin: 'com.android.application'
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
+    signingConfigs {
+        config {
+            keyAlias 'wallet-android-key-alias'
+            keyPassword 'FvM`{<N9>*G52#wD7UC[zpY,3q/n-&)='
+            storeFile file('G:/AndroidProjects/Freelance/Wallet/keystore/wallet-android-key.jks')
+            storePassword 'FvM`{<N9>*G52#wD7UC[zpY,3q/n-&)='
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.wallet"
@@ -14,8 +26,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
             buildConfigField("String", "BASE_URL", "\"https://bili-service.herokuapp.com/api/\"")
+            signingConfig signingConfigs.config
         }
         debug {
             buildConfigField("String", "BASE_URL", "\"http://192.168.31.70:3000/api/\"")
