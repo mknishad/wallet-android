@@ -75,7 +75,7 @@
                 android:id="@+id/loginButton"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_button"
-                android:text="@string/login"
+                android:text="@string/log_in"
                 android:textSize="20sp"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"

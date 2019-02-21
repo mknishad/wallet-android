@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.wallet.R;
+import com.wallet.model.User;
 import com.wallet.sharedpreference.WalletPreferences;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -95,10 +96,9 @@ public class MainActivity extends AppCompatActivity
                 });
 
         swipeRefreshLayout.setOnRefreshListener(() -> {
-            new Handler().postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 2000);
+            balanceTextView.setText(String.valueOf(preferences.getUser().getBalance()));
+            swipeRefreshLayout.setRefreshing(false);
         });
-
-
     }
 
     @Override
