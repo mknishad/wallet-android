@@ -7,8 +7,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.wallet.R;
 import com.wallet.ui.adapter.FragmentCategoryAdapter;
 import com.wallet.ui.adapter.FragmentHolder;
-import com.wallet.ui.fragment.QrTransferReceiveFragment;
-import com.wallet.ui.fragment.QrTransferSendFragment;
+import com.wallet.ui.fragment.QrTransferCreateFragment;
+import com.wallet.ui.fragment.QrTransferRedeemFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +48,8 @@ public class QrTransferActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
 
         fragmentHolderList = new ArrayList<>();
-        fragmentHolderList.add(new FragmentHolder(new QrTransferSendFragment(), getString(R.string.send)));
-        fragmentHolderList.add(new FragmentHolder(new QrTransferReceiveFragment(), getString(R.string.receive)));
+        fragmentHolderList.add(new FragmentHolder(new QrTransferCreateFragment(), getString(R.string.create)));
+        fragmentHolderList.add(new FragmentHolder(new QrTransferRedeemFragment(), getString(R.string.redeem)));
 
         fragmentCategoryAdapter = new FragmentCategoryAdapter(getSupportFragmentManager(),
                 fragmentHolderList);

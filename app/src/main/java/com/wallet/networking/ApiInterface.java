@@ -1,5 +1,6 @@
 package com.wallet.networking;
 
+import com.wallet.model.QrTransfer;
 import com.wallet.model.Transfer;
 import com.wallet.model.User;
 import com.wallet.model.UserLogin;
@@ -23,4 +24,9 @@ public interface ApiInterface {
                             @Path("userId") String userId,
                             @Path("mobileNumber") String mobileNumber,
                             @Body Transfer transfer);
+
+    @POST("transfer/users/{userId}/qrCodes")
+    Call<QrTransfer> qrTransfer(@Header("authorization") String authorization,
+                            @Path("userId") String userId,
+                            @Body QrTransfer qrTransfer);
 }

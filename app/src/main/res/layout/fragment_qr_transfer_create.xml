@@ -51,16 +51,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordWrapper"
+                android:id="@+id/pinCodeWrapper"
                 app:passwordToggleEnabled="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="textPassword"
+                    android:inputType="numberPassword"
                     android:textSize="20sp"
                     android:fontFamily="@font/noto_sans_regular"
-                    android:hint="@string/password"
+                    android:hint="@string/pin_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>

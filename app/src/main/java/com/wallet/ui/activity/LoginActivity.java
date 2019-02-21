@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         user = new User();
         userLogin = new UserLogin();
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Please Wait ...");
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);

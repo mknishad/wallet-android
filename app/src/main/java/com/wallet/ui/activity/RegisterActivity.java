@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         user = new User();
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Please Wait ...");
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void register() {
         if (!WalletUtil.hasInternetConnection(context)) {
-            WalletUtil.showSnackbar(toolbar, getString(R.string.no_internet_connection));
+            WalletUtil.showSnackbar(registerButton, getString(R.string.no_internet_connection));
             Log.e(TAG, "getUserStateFromServer: " + getString(R.string.no_internet_connection));
             return;
         }

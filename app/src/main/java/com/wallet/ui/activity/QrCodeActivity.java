@@ -10,6 +10,7 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.wallet.R;
+import com.wallet.util.Constant;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -39,10 +40,10 @@ public class QrCodeActivity extends AppCompatActivity {
         toolbar.setTitle(R.string.qr_code);
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
 
-        String text="hgjhg"; // Whatever you need to encode in the QR code
-        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        String text = getIntent().getStringExtra(Constant.QR_CODE);
+                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE,300,300);
+            BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE, 300, 300);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             qrCodeImageView.setImageBitmap(bitmap);

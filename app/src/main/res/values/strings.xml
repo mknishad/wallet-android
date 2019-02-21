@@ -40,8 +40,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="send">Send</string>
-    <string name="receive">Receive</string>
+    <string name="create">Create</string>
+    <string name="redeem">Redeem</string>
     <string name="generate_qr">Generate QR</string>
     <string name="qr_code">QR Code</string>
     <string name="pin_code">PIN Code</string>

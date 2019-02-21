@@ -22,7 +22,7 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class QrTransferReceiveFragment extends Fragment implements ZXingScannerView.ResultHandler {
+public class QrTransferRedeemFragment extends Fragment implements ZXingScannerView.ResultHandler {
 
     private static final String TAG = "QrTransferReceiveFragme";
 
@@ -30,7 +30,7 @@ public class QrTransferReceiveFragment extends Fragment implements ZXingScannerV
 
     private ZXingScannerView zXingScannerView;
 
-    public QrTransferReceiveFragment() {
+    public QrTransferRedeemFragment() {
         // Required empty public constructor
     }
 
@@ -87,7 +87,7 @@ public class QrTransferReceiveFragment extends Fragment implements ZXingScannerV
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                zXingScannerView.resumeCameraPreview(QrTransferReceiveFragment.this);
+                zXingScannerView.resumeCameraPreview(QrTransferRedeemFragment.this);
             }
         }, 2000);
     }
