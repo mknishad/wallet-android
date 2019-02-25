@@ -2,8 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@color/colorPrimary" />
-    <!--<item>
-        <bitmap android:src="@drawable/wallet_logo"
+    <item>
+        <bitmap android:src="@drawable/ic_splash"
             android:gravity="center" />
-    </item>-->
+    </item>
 </layer-list>

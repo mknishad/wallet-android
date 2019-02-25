@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009689</color>
-    <color name="colorPrimaryDark">#017C71</color>
-    <color name="colorAccent">#009689</color>
+    <color name="colorPrimary">#EC1922</color>
+    <color name="colorPrimaryDark">#BE1922</color>
+    <color name="colorAccent">#EC1922</color>
     <color name="colorTabText">#CCCCCC</color>
-    <color name="colorNew">#EC1922</color>
+
+    <color name="colorPrimaryOld">#009689</color>
+    <color name="colorPrimaryDarkOld">#017C71</color>
+    <color name="colorAccentOld">#009689</color>
 </resources>
