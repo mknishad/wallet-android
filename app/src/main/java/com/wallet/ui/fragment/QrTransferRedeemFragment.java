@@ -3,15 +3,12 @@ package com.wallet.ui.fragment;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.zxing.Result;
 import com.wallet.R;
@@ -20,7 +17,6 @@ import com.wallet.model.User;
 import com.wallet.networking.ApiClient;
 import com.wallet.networking.ApiInterface;
 import com.wallet.sharedpreference.WalletPreferences;
-import com.wallet.ui.activity.QrCodeActivity;
 import com.wallet.util.Constant;
 import com.wallet.util.WalletUtil;
 
@@ -39,7 +35,6 @@ import retrofit2.Response;
 public class QrTransferRedeemFragment extends Fragment implements ZXingScannerView.ResultHandler {
 
     private static final String TAG = "QrTransferReceiveFragme";
-
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 1000;
 
     private Context context;
@@ -92,13 +87,11 @@ public class QrTransferRedeemFragment extends Fragment implements ZXingScannerVi
     }
 
     @Override
-    public void setUserVisibleHint(boolean visible)
-    {
+    public void setUserVisibleHint(boolean visible) {
         Log.e(TAG, "setUserVisibleHint");
 
         super.setUserVisibleHint(visible);
-        if (visible && isResumed())
-        {
+        if (visible && isResumed()) {
             //Only manually call onResume if fragment is already visible
             //Otherwise allow natural fragment lifecycle to call onResume
             onVisible();

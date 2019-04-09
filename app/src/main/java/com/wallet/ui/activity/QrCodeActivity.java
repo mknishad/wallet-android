@@ -41,7 +41,7 @@ public class QrCodeActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
 
         String qrCode = getIntent().getStringExtra(Constant.QR_CODE);
-                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
             BitMatrix bitMatrix = multiFormatWriter.encode(qrCode, BarcodeFormat.QR_CODE, 300, 300);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
